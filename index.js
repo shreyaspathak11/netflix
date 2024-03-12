@@ -17,10 +17,8 @@ const PORT = process.env.PORT ;
 
 async function connectToDatabase() {
     try {
-        await mongoose.connect(process.env.MONGO_URL, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            
+        await
+        mongoose.connect(process.env.MONGO_URL, {
         });
         console.log(`Connected to MongoDB successfully! 🎉 ${mongoose.connection.host}`);
     } catch (error) {
@@ -30,7 +28,7 @@ async function connectToDatabase() {
 }
 
 connectToDatabase();
-
+console.log(process.env.MONGO_URL)
 app.use(bodyParser.json({ limit: '30mb', extended: true}));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true}));
 
